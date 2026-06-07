@@ -371,6 +371,7 @@ h2 {
 .about-copy,
 .focus-board,
 .project-placeholder,
+.project-card,
 .contact-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -496,6 +497,118 @@ h2 {
   max-width: 520px;
   margin-bottom: 0;
   color: var(--muted);
+}
+
+.project-card {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  min-height: 300px;
+  padding: 28px;
+  overflow: hidden;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.project-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  content: "";
+  background: linear-gradient(90deg, var(--cyan), var(--green), var(--amber));
+}
+
+.project-card:hover {
+  border-color: rgba(72, 215, 255, 0.38);
+  background: var(--panel-strong);
+  transform: translateY(-5px);
+}
+
+.project-topline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-type,
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  border: 1px solid rgba(72, 215, 255, 0.24);
+  border-radius: 999px;
+  color: var(--cyan);
+  background: rgba(72, 215, 255, 0.08);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.project-status {
+  border-color: rgba(110, 231, 183, 0.24);
+  color: var(--green);
+  background: rgba(110, 231, 183, 0.08);
+}
+
+.project-card h3 {
+  margin-bottom: 0;
+  font-size: 26px;
+  line-height: 1.25;
+}
+
+.project-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 5px 11px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-self: end;
+  margin-top: 8px;
+}
+
+.project-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid rgba(72, 215, 255, 0.28);
+  border-radius: var(--radius);
+  color: var(--text);
+  background: rgba(72, 215, 255, 0.08);
+  font-weight: 850;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.project-actions a:hover {
+  border-color: rgba(110, 231, 183, 0.42);
+  background: rgba(110, 231, 183, 0.1);
+  transform: translateY(-2px);
 }
 
 .placeholder-icon {
